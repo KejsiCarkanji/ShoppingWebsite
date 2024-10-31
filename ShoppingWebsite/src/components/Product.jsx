@@ -1,7 +1,20 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
 
-export default function Product({img, title, price, id, description, addProduct}){
+export default function Product(
+    {img, 
+    title, 
+    price, 
+    id, 
+    description, 
+    addProduct
+    }) {
+
+    const [quantity, setQuantity] = useState(1)
+
+    const handleAddToCart = () => {
+        addProduct(quantity); 
+      };
 
     return (
         <div>
@@ -12,9 +25,13 @@ export default function Product({img, title, price, id, description, addProduct}
             <Link to={`/`+id}>View Details</Link>
             }
             {description &&
+            <div>
             <p>{description}</p>
+            <input type="number" min="1" max="10" value={quantity}
+            onChange={(e) => setQuantity(Number(e.target.value))}/>
+            </ div>
             }
-            <button onClick={addProduct}>Add to Cart</button>
+            <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
     )
 }

@@ -1,12 +1,12 @@
-import bag1 from '../assets/images/bag1.jpg';
-import bag2 from '../assets/images/bag2.jpg';
-import bag3 from '../assets/images/bag3.jpg';
-import bag4 from '../assets/images/bag4.jpg';
-import bag5 from '../assets/images/bag5.jpg';
-import bag6 from '../assets/images/bag6.jpg';
-import bag7 from '../assets/images/bag7.jpg';
-import bag8 from '../assets/images/bag8.jpg';
-import bag9 from '../assets/images/bag9.jpg';
+import bag1 from '../assets/images/products/bag1.jpg';
+import bag2 from '../assets/images/products/bag2.jpg';
+import bag3 from '../assets/images/products/bag3.jpg';
+import bag4 from '../assets/images/products/bag4.jpg';
+import bag5 from '../assets/images/products/bag5.jpg';
+import bag6 from '../assets/images/products/bag6.jpg';
+import bag7 from '../assets/images/products/bag7.jpg';
+import bag8 from '../assets/images/products/bag8.jpg';
+import bag9 from '../assets/images/products/bag9.jpg';
 
 const products = [
     {

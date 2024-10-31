@@ -17,7 +17,7 @@ function ProductDetails() {
                 title={product.title} 
                 price={product.price} 
                 description={product.description} 
-                addProduct={() => addProduct(product)}
+                addProduct={(quantity) => addProduct(product, quantity)}
             />
         </Header>
     )

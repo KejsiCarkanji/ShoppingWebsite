@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom";
 import products from "../common/products";
 import Product from "../components/Product";
 import Header from "../components/Header";
@@ -8,6 +7,7 @@ export default function HomePage() {
     console.log(productsAdded)
     return(
         <Header> 
+        <div className="home-page">
         {products.map((product) => ( 
             <Product
                 key={product.id}
@@ -18,6 +18,7 @@ export default function HomePage() {
                 addProduct={() => addProduct(product)}
             />
         ))}
+        </div>
         </Header>
     )
 }
