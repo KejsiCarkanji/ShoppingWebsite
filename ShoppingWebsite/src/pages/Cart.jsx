@@ -6,7 +6,7 @@ export default function Cart() {
         deleteProduct, clearCart, calculateTotal} = useProductsContext()
     console.log(productsAdded)
     return (
-        <div classname="cart-page">
+        <div className="cart-page">
             <Header /> 
             <div className="cart-container">
                     {productsAdded.map((item) => (

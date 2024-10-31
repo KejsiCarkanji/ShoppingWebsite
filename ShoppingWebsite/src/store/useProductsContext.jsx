@@ -1,9 +1,21 @@
-import { createContext, useState, useContext} from "react";
+import { createContext, useState, useContext, useEffect} from "react";
 
 const ProductContext = createContext()
 
 export const ProductContextProvider = ({children}) => {
-    const [productsAdded, setProductsAdded] = useState([])
+
+    const getStoredProducts = () => {
+        const storedProducts = localStorage.getItem("productsAdded");
+        return storedProducts ? JSON.parse(storedProducts) : [];
+    };
+
+    const [productsAdded, setProductsAdded] = useState(() => 
+        getStoredProducts() 
+    );
+
+    useEffect(() => {
+        localStorage.setItem("productsAdded", JSON.stringify(productsAdded));
+    }, [productsAdded]);
     
     const addProduct = (product, quantity = 1) => {
         const productFound = productsAdded.find((item) => item.product.id === product.id)
@@ -35,8 +47,9 @@ export const ProductContextProvider = ({children}) => {
     }
 
     const clearCart = () => {
-        setProductsAdded([])
-    }
+        setProductsAdded([]);
+        localStorage.removeItem("productsAdded"); 
+    };
 
     const calculateTotal = () => {
         return productsAdded.reduce((total, item) => total + item.product.price * item.quantity, 0)
