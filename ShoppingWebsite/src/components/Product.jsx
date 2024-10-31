@@ -17,19 +17,20 @@ export default function Product(
       };
 
     return (
-        <div>
+        <div className="product">
             <img src={img} alt={title} />
             <h3>{title}</h3>
-            <p>{price}</p>
+            <p>{price+'€'}</p>
             {!description && 
             <Link to={`/`+id}>View Details</Link>
             }
             {description &&
             <div>
-            <p>{description}</p>
-            <input type="number" min="1" max="10" value={quantity}
-            onChange={(e) => setQuantity(Number(e.target.value))}/>
-            </ div>
+                <p>{description}</p>
+                <input type="number" min="1" max="10" value={quantity}
+                       onChange={(e) => setQuantity(Number(e.target.value))}
+                       style={{margin: '10px'}} />
+            </ div> 
             }
             <button onClick={handleAddToCart}>Add to Cart</button>
         </div>

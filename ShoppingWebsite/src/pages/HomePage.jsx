@@ -6,8 +6,9 @@ export default function HomePage() {
     const { addProduct, productsAdded } = useProductsContext()
     console.log(productsAdded)
     return(
-        <Header> 
         <div className="home-page">
+        <Header/> 
+        <div className="home-page-grid">
         {products.map((product) => ( 
             <Product
                 key={product.id}
@@ -19,6 +20,7 @@ export default function HomePage() {
             />
         ))}
         </div>
-        </Header>
+        
+        </div>
     )
 }

@@ -10,16 +10,18 @@ function ProductDetails() {
     const { id } = useParams()
     const product = products.find((item) => item.id === Number(id))
     return (
-        <Header>
-            <h1>Product Details</h1>
-            <Product 
-                img={product.img} 
-                title={product.title} 
-                price={product.price} 
-                description={product.description} 
-                addProduct={(quantity) => addProduct(product, quantity)}
-            />
-        </Header>
+        <div>
+            <Header />
+            <div className="product-details">
+                <Product 
+                    img={product.img} 
+                    title={product.title} 
+                    price={product.price} 
+                    description={product.description} 
+                    addProduct={(quantity) => addProduct(product, quantity)}
+                />
+            </div>
+        </div>
     )
 }
 
