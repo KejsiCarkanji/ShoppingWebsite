@@ -2,9 +2,10 @@ import { useParams } from "react-router"
 import products from "../common/products"
 import Product from "../components/Product"
 import Header from "../components/Header"
-import { useState } from "react"
-
+import { useProductsContext } from "../store/useProductsContext"
 function ProductDetails() {
+    const { addProduct, productsAdded } = useProductsContext()
+    console.log(productsAdded)
 
     const { id } = useParams()
     const product = products.find((item) => item.id === Number(id))
